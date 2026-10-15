@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatchana Phoplap (Nepjune) | Marketing Intern & Brand Strategy Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Pacifico&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#f7f4ef',
+                        paperDark: '#0f172a',
+                        paperCard: '#ffffff',
+                        paperCardDark: '#1e293b',
+                        warmBeige: '#ebe5dc',
+                        bubblePink: '#f472b6',
+                        hotPink: '#ec4899',
+                        softPink: '#fbcfe8',
+                        blush: '#fdf2f8',
+                        ink: '#1c1917',
+                        inkDark: '#f8fafc',
+                        charcoal: '#44403c',
+                        matcha: '#84cc16'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        bubble: ['Pacifico', 'cursive'],
+                        hand: ['Caveat', 'cursive'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'scrapbook': '0 10px 30px -5px rgba(28, 25, 23, 0.07), 0 4px 12px -2px rgba(244, 114, 182, 0.08)',
+                        'sticker': '3px 4px 0px #1c1917',
+                        'pink-sticker': '4px 4px 0px #ec4899',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: var(--bg-color, #f4f0ea);
+            color: var(--text-color, #1c1917);
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            background-image: 
+                radial-gradient(rgba(236, 72, 153, 0.09) 1px, transparent 1px),
+                radial-gradient(rgba(28, 25, 23, 0.05) 1px, #f4f0ea 1px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        .dark body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            background-image: 
+                radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                radial-gradient(rgba(255, 255, 255, 0.03) 1px, #0f172a 1px);
+        }
+
+        @media (min-width: 768px) {
+            html {
+                scroll-snap-type: y proximity;
+                scroll-padding-top: 100px;
+            }
+            section {
+                scroll-snap-align: start;
+                min-height: 85vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+
+        body.tour-active section {
+            scroll-snap-type: none !important;
+        }
+
+        /* Premium HR Animation Effects - Activated only after tour */
+        body.tour-completed .editorial-card {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        body.tour-completed .editorial-card:hover {
+            transform: translateY(-6px) scale(1.005);
+            box-shadow: 0 24px 50px -12px rgba(236, 72, 153, 0.22);
+        }
+
+        .bubble-pink-text {
+            font-family: 'Pacifico', cursive;
+            color: #f472b6;
+            text-shadow: 
+                -2px -2px 0px #ffffff,
+                2px 3px 0px #ec4899,
+                4px 6px 0px rgba(219, 39, 119, 0.22),
+                0px 10px 24px rgba(244, 114, 182, 0.45);
+            letter-spacing: 0.02em;
+        }
+
+        .editorial-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid #e7e0d6;
+            box-shadow: 0 12px 32px -6px rgba(28, 25, 23, 0.08), inset 0 1px 0 0 #ffffff;
+        }
+
+        .dark .editorial-card {
+            background: rgba(30, 41, 59, 0.88);
+            border-color: rgba(51, 65, 85, 0.8);
+            box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .washi-tape {
+            background: rgba(251, 207, 232, 0.72);
+            border-left: 2px dashed rgba(236, 72, 153, 0.35);
+            border-right: 2px dashed rgba(236, 72, 153, 0.35);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .dark .washi-tape {
+            background: rgba(236, 72, 153, 0.25);
+            border-left: 2px dashed rgba(244, 114, 182, 0.5);
+            border-right: 2px dashed rgba(244, 114, 182, 0.5);
+        }
+
+        .btn-pink-glossy {
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            color: #ffffff;
+            border: 1.5px solid #1c1917;
+            box-shadow: 3px 4px 0px #1c1917;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dark .btn-pink-glossy {
+            border-color: #f472b6;
+            box-shadow: 3px 4px 0px #f472b6;
+        }
+        .btn-pink-glossy:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 6px 0px #1c1917;
+        }
+
+        .btn-cream-sticker {
+            background: #ffffff;
+            color: #1c1917;
+            border: 1.5px solid #1c1917;
+            box-shadow: 3px 4px 0px #f472b6;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dark .btn-cream-sticker {
+            background: #1e293b;
+            color: #f8fafc;
+            border-color: #334155;
+            box-shadow: 3px 4px 0px #f472b6;
+        }
+        .btn-cream-sticker:hover {
+            background: #fdf2f8;
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 6px 0px #ec4899;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 16px rgba(236, 72, 153, 0); }
+        }
+        .pulse-tour {
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes highlightPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.95), 0 0 35px rgba(236, 72, 153, 0.85); border-color: #ec4899; transform: scale(1.03); }
+            50% { box-shadow: 0 0 0 18px rgba(236, 72, 153, 0), 0 0 50px rgba(236, 72, 153, 1); border-color: #f472b6; transform: scale(1.06); }
+        }
+        .tour-spotlight-highlight {
+            animation: highlightPulse 1.2s infinite ease-in-out !important;
+            z-index: 185 !important;
+            position: relative !important;
+            background-color: #fffdfa !important;
+        }
+        .dark .tour-spotlight-highlight {
+            background-color: #1e293b !important;
+        }
+
+        #tour-spotlight-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            z-index: 165;
+            display: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .nav-link-active {
+            background-color: rgba(244, 114, 182, 0.28) !important;
+            color: #1c1917 !important;
+            box-shadow: inset 0 0 0 1.5px rgba(236, 72, 153, 0.45);
+        }
+        .dark .nav-link-active {
+            background-color: rgba(236, 72, 153, 0.35) !important;
+            color: #ffffff !important;
+            box-shadow: inset 0 0 0 1.5px rgba(244, 114, 182, 0.6);
+        }
+
+        /* Adorable Hello Kitty Blowing Sweet Glowing Kiss with hand wave */
+        @keyframes kittyFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-8px) rotate(-3deg) scale(1.03); }
+        }
+        .kitty-animate-final {
+            animation: kittyFloat 3s ease-in-out infinite;
+        }
+        @keyframes kittyBlinkFinal {
+            0%, 85%, 100% { opacity: 1; }
+            92% { opacity: 0; }
+        }
+        .kitty-wink-final {
+            animation: kittyBlinkFinal 3.5s infinite;
+        }
+        @keyframes heartPulseFinal {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+        .heart-pulse {
+            animation: heartPulseFinal 1.6s ease-in-out infinite;
+        }
+        @keyframes blowKiss {
+            0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+            25% { opacity: 1; transform: translate(30px, -20px) scale(0.9); }
+            70% { opacity: 0.95; transform: translate(75px, -55px) scale(1.3); }
+            100% { transform: translate(110px, -80px) scale(1.6); opacity: 0; }
+        }
+        .kiss-heart {
+            animation: blowKiss 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f0ea;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f9a8d4;
+            border-radius: 9999px;
+            border: 2px solid #f4f0ea;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #ec4899;
+            border-color: #0f172a;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen antialiased selection:bg-pink-300 selection:text-ink">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-pink-300/30 dark:bg-blue-600/10 rounded-full blur-[110px]"></div>
+        <div class="absolute top-[35%] -left-24 w-[420px] h-[420px] bg-rose-200/40 dark:bg-pink-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-12 -right-24 w-[500px] h-[500px] bg-pink-200/35 dark:bg-indigo-600/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Spotlight tour backdrop -->
+    <div id="tour-spotlight-backdrop"></div>
+
+    <div class="fixed bottom-6 left-6 z-50 no-print">
+        <button id="tour-trigger-btn" onclick="startPortfolioTour()" class="btn-pink-glossy px-4 py-3 rounded-full font-display font-bold text-xs flex items-center gap-2 shadow-pink-sticker pulse-tour">
+            <span class="text-base">✨</span>
+            <span>How to Explore Portfolio</span>
+        </button>
+    </div>
+
+    <header id="main-site-header" class="fixed top-0 left-0 right-0 z-[170] px-4 sm:px-8 pt-4 no-print">
+        <nav id="navbar-element" class="max-w-6xl mx-auto editorial-card rounded-full px-5 py-2.5 flex items-center justify-between border-2 border-stone-800/15 transition-all duration-300">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-full bg-pink-400 border-2 border-ink dark:border-pink-300 shadow-sticker flex items-center justify-center font-bubble text-sm text-white transition-transform group-hover:rotate-12">
+                    CP
+                </div>
+                <div>
+                    <span class="font-display font-extrabold text-ink dark:text-white tracking-tight text-sm sm:text-base block leading-none">CHATCHANA P. (NEPJUNE)</span>
+                    <span class="font-mono text-[10px] text-pink-600 dark:text-pink-400 tracking-widest uppercase">Marketing • Brand • Strategy ✨</span>
+                </div>
+            </a>
+
+            <div id="nav-menu-links" class="hidden md:flex items-center gap-1 bg-stone-100/90 dark:bg-slate-800/90 border border-stone-300/80 dark:border-slate-700 rounded-full p-1">
+                <a href="#hero" id="nav-btn-about" data-section="hero" class="nav-spy-link nav-link-active px-4 py-1.5 rounded-full text-xs font-semibold text-stone-700 dark:text-stone-300 hover:text-ink dark:hover:text-white hover:bg-pink-200/70 dark:hover:bg-pink-900/50 transition-all">01. About</a>
+                <a href="#skills" id="nav-btn-edge" data-section="skills" class="nav-spy-link px-4 py-1.5 rounded-full text-xs font-semibold text-stone-700 dark:text-stone-300 hover:text-ink dark:hover:text-white hover:bg-pink-200/70 dark:hover:bg-pink-900/50 transition-all">02. Marketing Edge</a>
+                <a href="#projects" id="nav-btn-campaigns" data-section="projects" class="nav-spy-link px-4 py-1.5 rounded-full text-xs font-semibold text-stone-700 dark:text-stone-300 hover:text-ink dark:hover:text-white hover:bg-pink-200/70 dark:hover:bg-pink-900/50 transition-all">03. Campaigns</a>
+                <a href="#leadership-section" id="nav-btn-leadership" data-section="leadership-section" class="nav-spy-link px-4 py-1.5 rounded-full text-xs font-semibold text-stone-700 dark:text-stone-300 hover:text-ink dark:hover:text-white hover:bg-pink-200/70 dark:hover:bg-pink-900/50 transition-all">04. Leadership</a>
+                <a href="#contact" id="nav-btn-contact" data-section="contact" class="nav-spy-link px-4 py-1.5 rounded-full text-xs font-semibold text-stone-700 dark:text-stone-300 hover:text-ink dark:hover:text-white hover:bg-pink-200/70 dark:hover:bg-pink-900/50 transition-all">05. Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+                <button id="theme-toggle-btn" onclick="toggleDarkMode()" class="w-9 h-9 rounded-full bg-white dark:bg-slate-800 border-2 border-stone-800 dark:border-slate-600 flex items-center justify-center text-xs shadow-sm hover:scale-110 transition-transform" title="Toggle Dark/Light Mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button id="full-cv-btn-el" onclick="openCVModal()" class="btn-cream-sticker px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 hover:scale-105 transition-transform">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i>
+                    <span>Full CV</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 space-y-16">
+
+        <section id="hero" class="relative min-h-[85vh] flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="editorial-card rounded-[32px] p-6 sm:p-10 lg:p-14 relative overflow-hidden border-2 border-stone-300/90 dark:border-slate-700">
+                <div class="washi-tape w-36 h-7 absolute -top-2 left-1/2 -translate-x-1/2 rotate-[-2deg] z-20"></div>
+
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-stone-300/80 dark:border-slate-700 text-xs font-mono text-stone-500 dark:text-stone-400">
+                    <span>SLIDE 01 // MARKETING PROFILE</span>
+                    <span class="px-3 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 font-semibold border border-pink-300 dark:border-pink-800">✦ BSc 1st Class Hons (UK) &amp; SMU Postgraduate</span>
+                    <span>SINGAPORE • UNITED KINGDOM • THAILAND</span>
+                </div>
+
+                <div class="relative py-8 sm:py-10 flex flex-col items-center justify-center text-center">
+                    
+                    <div class="relative z-10 select-none w-full max-w-4xl mx-auto flex flex-col items-center" data-aos="zoom-in" data-aos-duration="1100">
+                        <p class="font-hand text-2xl sm:text-3xl text-stone-700 dark:text-stone-300 rotate-[-1deg] mb-1">
+                            hello! nice to meet you, i'm <span class="font-bold text-pink-600 dark:text-pink-400 animate-pulse">Nepjune</span> ✨
+                        </p>
+                        
+                        <div class="relative w-full max-w-3xl flex flex-col items-center justify-center py-1">
+                            <h1 class="bubble-pink-text text-5xl sm:text-7xl md:text-[84px] leading-[1.06] text-center z-10 hover:scale-105 transition-transform duration-300">
+                                Chatchana<br />Phoplap
+                            </h1>
+
+                            <div class="mt-3 sm:mt-0 sm:absolute sm:left-4 md:left-10 sm:bottom-5 -rotate-3 bg-stone-900 dark:bg-slate-800 text-white font-mono text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-full border-2 border-ink dark:border-pink-400 shadow-pink-sticker uppercase tracking-wider z-20">
+                                MARKETING INTERN
+                            </div>
+
+                            <div class="mt-2 sm:mt-0 sm:absolute sm:right-2 md:right-6 sm:bottom-5 rotate-3 bg-pink-100 dark:bg-pink-950 text-ink dark:text-pink-200 font-mono text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-full border-2 border-ink dark:border-pink-400 shadow-sticker uppercase tracking-wider z-20">
+                                &amp; GROWTH STRATEGIST 🎀
+                            </div>
+                        </div>
+
+                        <div class="relative mt-3 sm:mt-2 group">
+                            <div class="absolute -top-4 -right-6 sm:-right-12 z-30 bg-white dark:bg-slate-900 border-2 border-ink dark:border-slate-500 px-4 py-1 rounded-full shadow-sticker rotate-2 font-hand text-sm sm:text-base font-bold text-pink-600 dark:text-pink-300 flex items-center gap-1.5 whitespace-nowrap">
+                                <span>✨</span>
+                                <span>Chatchana Phoplap (Nepjune)</span>
+                            </div>
+
+                            <div id="hero-portrait-container" onclick="openLightbox('https://i.postimg.cc/x1b5kWVH/9ADF1D9D-4668-47A2-98ED-9CBF78B35501.jpg', 'Chatchana Phoplap (Nepjune) — Marketing & Growth Strategist')" class="w-56 sm:w-64 rounded-[26px] bg-white dark:bg-slate-800 p-3 pb-3.5 border-2 border-ink dark:border-slate-600 shadow-sticker rotate-[1.5deg] cursor-pointer mx-auto hover:rotate-0 transition-transform duration-300">
+                                <div class="w-full aspect-[4/4.6] rounded-[18px] overflow-hidden bg-stone-100 border border-stone-200 dark:border-slate-700">
+                                    <img src="https://i.postimg.cc/x1b5kWVH/9ADF1D9D-4668-47A2-98ED-9CBF78B35501.jpg" alt="Chatchana Phoplap (Nepjune)" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/300x360/f472b6/ffffff?text=Nepjune'" />
+                                </div>
+                                <div class="mt-2.5 px-1 flex items-center justify-between text-[9px] sm:text-[10px] font-mono">
+                                    <span class="font-bold text-ink dark:text-white tracking-tight">CHATCHANA PHOPLAP (NEPJUNE)</span>
+                                    <span class="text-pink-500 font-semibold">✦ Portrait</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-7 font-display font-bold text-lg sm:text-xl text-ink dark:text-white max-w-3xl tracking-tight uppercase" data-aos="fade-up" data-aos-delay="200">
+                        Data-Driven Marketing • Promotional Campaigns • Consumer &amp; Product R&amp;D
+                    </p>
+                    <p class="mt-3 text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-3xl leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+                        Bridging <span class="px-2 py-0.5 rounded bg-pink-200/80 dark:bg-pink-900/60 text-ink dark:text-pink-200 font-semibold">creative brand storytelling</span> with <span class="px-2 py-0.5 rounded bg-stone-200 dark:bg-slate-700 text-ink dark:text-slate-200 font-semibold">commercial analytics</span>—driving a <strong class="text-ink dark:text-white">+28.6% surge in weekly net sales</strong> through menu R&amp;D and managing <strong class="text-ink dark:text-white">10-property promotional campaigns</strong>.
+                    </p>
+                </div>
+
+                <div class="pt-4 border-t border-stone-300/80 dark:border-slate-700 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-stone-500 dark:text-stone-400">
+                    <span>Promotional Strategy • Market Research (R&amp;D) • Revenue &amp; ROI Optimization</span>
+                    <span class="text-pink-600 dark:text-pink-400 font-semibold">Marketing &amp; Brand Strategy Portfolio Edition</span>
+                    <span>chatchanaphoplap@gmail.com</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Marketing Edge & Competencies (Fixed Snap Alignment) -->
+        <section id="skills" class="scroll-mt-24 py-8" data-aos="fade-up" data-aos-duration="1000">
+            <div class="editorial-card rounded-[32px] p-6 sm:p-10 border-2 border-stone-300/90 dark:border-slate-700 relative overflow-hidden space-y-8">
+                
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-stone-300/80 dark:border-slate-700 text-xs font-mono text-stone-500 dark:text-stone-400">
+                    <span>SLIDE 02 // MARKETING EDGE &amp; COMPETENCIES</span>
+                    <span class="text-pink-600 dark:text-pink-400 font-semibold">+ THE COMMERCIAL CREATIVE</span>
+                    <span>CORE EXPERTISE</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="p-6 rounded-3xl bg-blush/70 dark:bg-slate-800/80 border-2 border-pink-200 dark:border-slate-700 flex items-center justify-around text-center shadow-sm">
+                        <div class="space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-pink-100 dark:bg-pink-950 border-2 border-ink dark:border-pink-400 flex items-center justify-center text-pink-600 dark:text-pink-400 shadow-sticker hover:rotate-6 transition-transform">
+                                <i data-lucide="megaphone" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-sm text-ink dark:text-white">Brand &amp; Campaigns</h3>
+                            <p class="text-[11px] text-stone-500 dark:text-stone-400">Promotions, PR &amp; R&amp;D</p>
+                        </div>
+                        <div class="text-pink-500 font-mono font-bold text-xs tracking-tighter animate-pulse">
+                            powered by →<br /><span class="text-[10px] text-stone-500 font-normal">Consumer &amp; ROI Data</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-pink-100 dark:bg-pink-950 border-2 border-ink dark:border-pink-400 flex items-center justify-center text-pink-600 dark:text-pink-400 shadow-sticker hover:-rotate-6 transition-transform">
+                                <i data-lucide="trending-up" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-sm text-ink dark:text-white">Commercial Analytics</h3>
+                            <p class="text-[11px] text-stone-500 dark:text-stone-400">Coventry 1st Class &amp; SMU</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h2 class="font-sans font-light text-2xl sm:text-3xl text-stone-800 dark:text-white tracking-tight leading-tight">
+                            Where Consumer Creativity Meets <span class="font-display font-extrabold bg-pink-200/90 dark:bg-pink-900/60 px-3 py-0.5 rounded-xl text-ink dark:text-pink-200">Revenue Impact.</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                            Combining a <strong class="text-ink dark:text-white">First-Class Honours degree (Coventry University, UK)</strong> and <strong class="text-ink dark:text-white">SMU admission</strong> with hands-on campaign execution—turning market research (R&amp;D), strategic pricing, and multi-property promotions into measurable top-line growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 items-center border-t border-stone-200 dark:border-slate-700/80">
+                    <div class="lg:col-span-5 bg-blush/70 dark:bg-slate-800/70 border-2 border-pink-200 dark:border-slate-700 rounded-3xl p-6 flex flex-col justify-between space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] font-mono uppercase text-pink-600 dark:text-pink-400 font-bold">VERIFIED CAMPAIGN METRICS</span>
+                                <h3 class="font-display font-bold text-lg text-ink dark:text-white">Commercial &amp; Marketing Growth</h3>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-pink-500 text-white font-mono text-xs font-bold shadow-sm animate-bounce">+28.6% Peak</span>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-pink-200 dark:border-slate-700 shadow-inner">
+                            <svg viewBox="0 0 360 190" class="w-full h-44 overflow-visible">
+                                <line x1="25" y1="25" x2="345" y2="25" stroke="#f3e8ff" stroke-width="1.5" />
+                                <line x1="25" y1="65" x2="345" y2="65" stroke="#fce7f3" stroke-width="1.5" />
+                                <line x1="25" y1="105" x2="345" y2="105" stroke="#fce7f3" stroke-width="1.5" />
+                                <line x1="25" y1="150" x2="345" y2="150" stroke="#e7e5e4" stroke-width="2" />
+
+                                <rect x="42" y="102" width="38" height="48" rx="6" fill="#fbcfe8" />
+                                <rect x="115" y="76" width="38" height="74" rx="6" fill="#f9a8d4" />
+                                <rect x="188" y="48" width="38" height="102" rx="6" fill="#f472b6" />
+                                <rect x="262" y="22" width="38" height="128" rx="6" fill="#ec4899" />
+
+                                <path d="M 61 98 C 100 85, 134 72, 207 42 C 240 30, 260 25, 281 18" fill="none" stroke="#f472b6" stroke-width="3" stroke-linecap="round" />
+
+                                <circle cx="61" cy="98" r="4.5" fill="#ffffff" stroke="#1c1917" stroke-width="2.5" />
+                                <circle cx="134" cy="70" r="4.5" fill="#ffffff" stroke="#1c1917" stroke-width="2.5" />
+                                <circle cx="207" cy="42" r="4.5" fill="#ffffff" stroke="#1c1917" stroke-width="2.5" />
+                                <circle cx="281" cy="18" r="6" fill="#f472b6" stroke="#1c1917" stroke-width="2.5" />
+
+                                <text x="43" y="92" fill="#888" font-size="9" font-weight="bold" font-family="JetBrains Mono">+8.4%</text>
+                                <text x="114" y="64" fill="#888" font-size="9" font-weight="bold" font-family="JetBrains Mono">+18.7%</text>
+                                <text x="186" y="34" fill="#db2777" font-size="9" font-weight="bold" font-family="JetBrains Mono">+28.6%</text>
+                                <text x="256" y="11" fill="#db2777" font-weight="bold" font-size="9" font-family="JetBrains Mono">10 Assets</text>
+
+                                <text x="40" y="172" fill="#888" font-size="9.5" font-family="JetBrains Mono">Orders</text>
+                                <text x="108" y="172" fill="#888" font-size="9.5" font-family="JetBrains Mono">Ticket฿</text>
+                                <text x="182" y="172" fill="#888" font-size="9.5" font-family="JetBrains Mono">NetSales</text>
+                                <text x="255" y="172" fill="#db2777" font-weight="bold" font-size="9.5" font-family="JetBrains Mono">PP Group</text>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs font-mono text-stone-500 dark:text-stone-400">
+                            <span>■ Phusit Cafe &amp; PP Group</span>
+                            <span>● Audited CV Performance</span>
+                        </div>
+                    </div>
+
+                    <div id="marketing-pillars-container" class="lg:col-span-7 space-y-6">
+                        <div>
+                            <p class="text-xs font-mono uppercase tracking-wider text-stone-400 dark:text-stone-500 mb-3">CORE MARKETING PILLARS (CLICK TO INSPECT):</p>
+                            <div class="flex flex-wrap gap-2.5">
+                                <button onclick="selectSkill('campaign')" id="pill-campaign" class="skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-pink-500 text-white border-2 border-ink dark:border-pink-400 shadow-sticker transition-all hover:scale-105">
+                                    <i data-lucide="megaphone" class="w-4 h-4"></i>
+                                    <span>[Promotional Campaigns]</span>
+                                </button>
+                                <button onclick="selectSkill('research')" id="pill-research" class="skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-white dark:bg-slate-800 text-ink dark:text-white border-2 border-ink dark:border-slate-600 hover:bg-pink-100 transition-all hover:scale-105">
+                                    <i data-lucide="search" class="w-4 h-4 text-pink-500"></i>
+                                    <span>[Market Research &amp; R&amp;D]</span>
+                                </button>
+                                <button onclick="selectSkill('pricing')" id="pill-pricing" class="skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-white dark:bg-slate-800 text-ink dark:text-white border-2 border-ink dark:border-slate-600 hover:bg-pink-100 transition-all hover:scale-105">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-pink-500"></i>
+                                    <span>[Pricing &amp; Revenue Strategy]</span>
+                                </button>
+                                <button onclick="selectSkill('outreach')" id="pill-outreach" class="skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-white dark:bg-slate-800 text-ink dark:text-white border-2 border-ink dark:border-slate-600 hover:bg-pink-100 transition-all hover:scale-105">
+                                    <i data-lucide="users" class="w-4 h-4 text-pink-500"></i>
+                                    <span>[Public Engagement &amp; Event PR]</span>
+                                </button>
+                                <button onclick="selectSkill('tools')" id="pill-tools" class="skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-white dark:bg-slate-800 text-ink dark:text-white border-2 border-ink dark:border-slate-600 hover:bg-pink-100 transition-all hover:scale-105">
+                                    <i data-lucide="laptop" class="w-4 h-4 text-pink-500"></i>
+                                    <span>[Marketing &amp; Business Toolkit]</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-stone-50 dark:bg-slate-800 border-2 border-stone-800 dark:border-slate-600 shadow-sticker space-y-3 relative">
+                            <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-pink-200 dark:bg-pink-900 border border-ink dark:border-pink-400 font-mono text-[10px] font-bold text-ink dark:text-pink-200" id="skill-level">
+                                REAL ESTATE BY PP GROUP
+                            </span>
+                            <h4 id="skill-title" class="font-display font-extrabold text-lg text-ink dark:text-white">
+                                Multi-Property Promotional Campaigns &amp; Tenant Retention
+                            </h4>
+                            <p id="skill-desc" class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                                Directed targeted promotional campaigns and tenant engagement initiatives across a 10-property real estate portfolio, accelerating occupancy rates and maximizing monthly ROI.
+                            </p>
+                            <div class="w-full h-3 rounded-full bg-stone-200 dark:bg-slate-700 border border-ink dark:border-slate-600 overflow-hidden p-0.5">
+                                <div id="skill-bar" class="h-full rounded-full bg-gradient-to-r from-pink-400 to-pink-600 transition-all duration-500" style="width: 96%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-24 space-y-8 min-h-[90vh] flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-pink-600 dark:text-pink-400 block">SLIDE 03 // MARKETING CAMPAIGNS &amp; CASE STUDIES</span>
+                    <div class="flex flex-wrap items-baseline gap-3">
+                        <h2 class="bubble-pink-text text-4xl sm:text-5xl">campaigns &amp; works</h2>
+                        <span class="font-hand text-xl text-stone-600 dark:text-stone-400 font-bold">(click any case study or image to inspect details 📸✨)</span>
+                    </div>
+                </div>
+                <span class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-stone-300 dark:border-slate-700 text-xs font-mono text-stone-600 dark:text-stone-300">
+                    Verified Commercial Case Studies &amp; Galleries
+                </span>
+            </div>
+
+            <!-- Phusit Cafe Case Study -->
+            <article id="cafe-case" class="editorial-card rounded-[32px] p-6 sm:p-10 border-2 border-stone-300/90 dark:border-slate-700 relative overflow-hidden space-y-6" data-aos="zoom-in">
+                <div class="washi-tape w-28 h-6 absolute -top-1 right-10 rotate-[8deg]"></div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 border border-pink-300 dark:border-pink-800">
+                            01 • Consumer R&amp;D, Menu Marketing &amp; Pricing
+                        </span>
+                        <span class="text-xs font-mono text-lime-800 dark:text-lime-300 bg-lime-100 dark:bg-lime-950 px-3 py-1 rounded-full border border-lime-300 dark:border-lime-800 font-semibold">
+                            +28.6% Weekly Net Sales
+                        </span>
+                    </div>
+                    <button id="cafe-read-btn" onclick="inspectProject('cafe')" class="btn-cream-sticker px-4 py-1.5 rounded-full font-display font-bold text-xs text-pink-600 dark:text-pink-400 flex items-center gap-1 z-30 hover:scale-105 transition-transform">
+                        <span>Read Full Case Study</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-4xl text-ink dark:text-white">
+                        Phusit Nungchill Cafe — Menu R&amp;D &amp; Growth Strategy
+                    </h3>
+                    <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mt-2">
+                        Led continuous <strong class="text-ink dark:text-white">market research and product R&amp;D</strong> to launch new beverage and dessert offerings paired with <strong class="text-ink dark:text-white">data-driven pricing</strong>—driving a <strong class="text-pink-600 dark:text-pink-400">+28.6% surge in weekly net sales</strong>, lifting average ticket size to <strong class="text-ink dark:text-white">THB 88.81 (+18.7%)</strong>, and growing orders by <strong class="text-ink dark:text-white">+8.4% (155 transactions)</strong>.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-5 p-4 rounded-2xl bg-blush/90 dark:bg-slate-800/90 border-2 border-pink-200 dark:border-slate-700 space-y-4">
+                        <div id="cafe-gallery-grid-main" class="overflow-hidden rounded-xl border-2 border-stone-300 dark:border-slate-600 shadow-sm cursor-pointer group bg-white hover:scale-[1.02] transition-transform" onclick="openLightbox('https://i.postimg.cc/HxhRDRqF/IMG-2671.jpg', 'Phusit Nungchill Cafe — Verified Sales Growth Chart')">
+                            <img src="https://i.postimg.cc/HxhRDRqF/IMG-2671.jpg" alt="Cafe Sales Chart" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="p-2 text-center font-mono text-[11px] text-pink-600 dark:text-pink-400 font-bold bg-white dark:bg-slate-900">
+                                🔍 Click to Zoom Sales Chart Full-Screen
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 font-mono text-xs">
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-pink-200 dark:border-slate-700">
+                                <span class="text-stone-500">WEEKLY NET SALES</span>
+                                <span class="text-pink-600 dark:text-pink-400 font-bold">+28.6% (AUG '24)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-pink-200 dark:border-slate-700">
+                                <span class="text-stone-500">AVG TICKET SIZE</span>
+                                <span class="text-ink dark:text-white font-semibold">฿88.81 (+18.7%)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-pink-200 dark:border-slate-700">
+                                <span class="text-stone-500">ORDER VOLUME</span>
+                                <span class="text-lime-700 dark:text-lime-400 font-bold">155 ORDERS (+8.4%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h4 id="cafe-gallery-heading" class="font-display font-bold text-base sm:text-lg text-ink dark:text-white">
+                                    Phusit Cafe Menu R&amp;D, Work &amp; Review Gallery (18 Photos)
+                                </h4>
+                                <p class="text-xs font-mono text-stone-500">Click any photo below to view full-screen Lightbox:</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-pink-500 text-white font-mono text-xs font-bold">18 Assets</span>
+                        </div>
+
+                        <div id="cafe-gallery-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-2.5 p-3 rounded-2xl bg-stone-50 dark:bg-slate-800/90 border-2 border-stone-200 dark:border-slate-700">
+                            <div onclick="openLightbox('https://i.postimg.cc/d3z28PpF/4825424859075776679-18f5973f15e7d8fc89043ae063e06b98-22120803.jpg', 'Phusit Cafe Gallery 01')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/d3z28PpF/4825424859075776679-18f5973f15e7d8fc89043ae063e06b98-22120803.jpg" alt="Cafe 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/7hp3g8dv/4825424859075776679-49d1c5b707314ccbaf95d43146b5ab22-22120803.jpg', 'Phusit Cafe Gallery 02')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/7hp3g8dv/4825424859075776679-49d1c5b707314ccbaf95d43146b5ab22-22120803.jpg" alt="Cafe 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/Fz2yj585/4825424859075776679-52a425b5f501d07e1f0b25ea6f44abb1-22120803.jpg', 'Phusit Cafe Gallery 03')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/Fz2yj585/4825424859075776679-52a425b5f501d07e1f0b25ea6f44abb1-22120803.jpg" alt="Cafe 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/Fz2yj5qM/4825424859075776679-5384618e690e0957e08e60906e59ac68-22120803.jpg', 'Phusit Cafe Gallery 04')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/Fz2yj5qM/4825424859075776679-5384618e690e0957e08e60906e59ac68-22120803.jpg" alt="Cafe 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/zv9CnZ65/4825424859075776679-6332b41ab5a9a2a45f4d9345c7269abf-22120803.jpg', 'Phusit Cafe Gallery 05')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/zv9CnZ65/4825424859075776679-6332b41ab5a9a2a45f4d9345c7269abf-22120803.jpg" alt="Cafe 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/rsv1SX3L/4825424859075776679-693c2aebe7a6e9ad4e7e4aa7b00d2541-22120803.jpg', 'Phusit Cafe Gallery 06')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/rsv1SX3L/4825424859075776679-693c2aebe7a6e9ad4e7e4aa7b00d2541-22120803.jpg" alt="Cafe 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/wMSXh8Zg/4825424859075776679-987928ead98e7bb64029099c692f2e14-22120803.jpg', 'Phusit Cafe Gallery 07')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/wMSXh8Zg/4825424859075776679-987928ead98e7bb64029099c692f2e14-22120803.jpg" alt="Cafe 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/wMSXh8Z9/IMG-0443.jpg', 'Phusit Cafe Gallery 08')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/wMSXh8Z9/IMG-0443.jpg" alt="Cafe 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/XqTfwSmj/IMG-1857.jpg', 'Phusit Cafe Gallery 09')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/XqTfwSmj/IMG-1857.jpg" alt="Cafe 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/nr64vb5P/IMG-2690.png', 'Phusit Cafe Gallery 10')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/nr64vb5P/IMG-2690.png" alt="Cafe 10" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/L5rtzK7Q/IMG-2692.png', 'Phusit Cafe Gallery 11')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/L5rtzK7Q/IMG-2692.png" alt="Cafe 11" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/NFW61qVn/IMG-2693.png', 'Phusit Cafe Gallery 12')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/NFW61qVn/IMG-2693.png" alt="Cafe 12" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/1XLGphTC/IMG-2694.png', 'Phusit Cafe Gallery 13')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/1XLGphTC/IMG-2694.png" alt="Cafe 13" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/y65yqcdD/IMG-5061.jpg', 'Phusit Cafe Gallery 14')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/y65yqcdD/IMG-5061.jpg" alt="Cafe 14" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/tRfN0WT1/IMG-5068.jpg', 'Phusit Cafe Gallery 15')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/tRfN0WT1/IMG-5068.jpg" alt="Cafe 15" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/CMtsyk1j/IMG-5220.jpg', 'Phusit Cafe Gallery 16')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/CMtsyk1j/IMG-5220.jpg" alt="Cafe 16" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/sf84F7XZ/IMG-9696.jpg', 'Phusit Cafe Gallery 17')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/sf84F7XZ/IMG-9696.jpg" alt="Cafe 17" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/MZ4mkVT0/men-xisr-m-7.png', 'Phusit Cafe Gallery 18')" class="aspect-square rounded-xl overflow-hidden border border-stone-300 dark:border-slate-600 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/MZ4mkVT0/men-xisr-m-7.png" alt="Cafe 18" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Real Estate Case Study -->
+            <article id="realestate-case" class="editorial-card rounded-[32px] p-6 sm:p-10 border-2 border-stone-300/90 dark:border-slate-700 relative overflow-hidden space-y-6" data-aos="zoom-in">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-stone-900 dark:bg-slate-800 text-white">
+                            02 • Property Promotional Campaigns
+                        </span>
+                        <span class="text-xs font-mono text-pink-600 dark:text-pink-400 font-bold">10-Asset Portfolio</span>
+                    </div>
+                    <button id="realestate-read-btn" onclick="inspectProject('realestate')" class="btn-cream-sticker px-4 py-1.5 rounded-full font-display font-bold text-xs text-pink-600 dark:text-pink-400 flex items-center gap-1 z-30 hover:scale-105 transition-transform">
+                        <span>Read Full Case Study</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-4xl text-ink dark:text-white">
+                        Real Estate by PP Group — Promotional &amp; ROI Strategy
+                    </h3>
+                    <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mt-2">
+                        Directed <strong class="text-ink dark:text-white">promotional campaigns and tenant relationship marketing</strong> across a 10-property portfolio, optimizing rental pricing and promotional budgets to maximize occupancy and monthly cash-flow ROI.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-5">
+                        <div onclick="openLightbox('https://i.postimg.cc/854KN3q5/IMG-2674.png', 'Real Estate Portfolio Administration Main Listing')" class="rounded-2xl bg-stone-900 dark:bg-slate-800 text-white p-3 border-2 border-ink dark:border-slate-600 shadow-pink-sticker cursor-pointer group overflow-hidden hover:scale-[1.02] transition-transform">
+                            <img src="https://i.postimg.cc/854KN3q5/IMG-2674.png" alt="Real Estate Campaign" class="w-full h-52 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500" />
+                            <div class="mt-2.5 flex items-center justify-between text-xs font-mono px-1">
+                                <span class="font-bold text-white">Real Estate Portfolio Administration</span>
+                                <span class="text-pink-300">🔍 Click to Zoom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs font-mono text-stone-500 uppercase font-bold">PROPERTY GALLERY &amp; REVIEWS (8 ASSETS — CLICK TO ZOOM):</p>
+                            <span class="px-2.5 py-0.5 rounded-full bg-stone-900 text-white font-mono text-[11px]">8 Reviews</span>
+                        </div>
+                        <div id="realestate-gallery-grid" class="grid grid-cols-4 gap-2.5">
+                            <div onclick="openLightbox('https://i.postimg.cc/P500Rgjn/IMG-2676.png', 'Real Estate Review 01')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/P500Rgjn/IMG-2676.png" alt="Property 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/nhNNPyt6/IMG-2677.png', 'Real Estate Review 02')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/nhNNPyt6/IMG-2677.png" alt="Property 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/4xjjSDTj/IMG-2678.png', 'Real Estate Review 03')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/4xjjSDTj/IMG-2678.png" alt="Property 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/nhX6TH6b/IMG-2679.png', 'Real Estate Review 04')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/nhX6TH6b/IMG-2679.png" alt="Property 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/NjKWbgZR/IMG-2680.png', 'Real Estate Review 05')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/NjKWbgZR/IMG-2680.png" alt="Property 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/wj1SF6nw/IMG-2681.png', 'Real Estate Review 06')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/wj1SF6nw/IMG-2681.png" alt="Property 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/RZWjGM22/IMG-2683.png', 'Real Estate Review 07')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/RZWjGM22/IMG-2683.png" alt="Property 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                            <div onclick="openLightbox('https://i.postimg.cc/DwSt52RH/IMG-2684.png', 'Real Estate Review 08')" class="aspect-square rounded-xl overflow-hidden border-2 border-stone-300 dark:border-slate-700 bg-white cursor-pointer group hover:scale-105 transition-transform">
+                                <img src="https://i.postimg.cc/DwSt52RH/IMG-2684.png" alt="Property 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Slide 4: Leadership Section Styled Consistently with Slide 3 -->
+        <section id="leadership-section" class="scroll-mt-24 space-y-8 min-h-[90vh] flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-pink-600 dark:text-pink-400 block">SLIDE 04 // EXECUTIVE LEADERSHIP SHOWCASE</span>
+                    <div class="flex flex-wrap items-baseline gap-3">
+                        <h2 class="bubble-pink-text text-4xl sm:text-5xl">leadership &amp; pr</h2>
+                        <span class="font-hand text-xl text-stone-600 dark:text-stone-400 font-bold">(CU Student Union, Rotary &amp; RYLA 🌟)</span>
+                    </div>
+                </div>
+                <span class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-stone-300 dark:border-slate-700 text-xs font-mono text-stone-600 dark:text-stone-300">
+                    Verified Leadership Case Studies
+                </span>
+            </div>
+
+            <article id="leadership-case" class="editorial-card rounded-[32px] p-6 sm:p-10 border-2 border-stone-300/90 dark:border-slate-700 relative overflow-hidden space-y-6" data-aos="zoom-in">
+                <div class="washi-tape w-28 h-6 absolute -top-1 right-10 rotate-[8deg]"></div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 border border-pink-300 dark:border-pink-800">
+                            03 • CU Student Union, Rotary &amp; RYLA
+                        </span>
+                        <span class="text-xs font-mono text-pink-600 dark:text-pink-400 font-semibold bg-pink-50 dark:bg-slate-900 px-3 py-1 rounded-full border border-pink-200">
+                            Project Lead &amp; Treasurer
+                        </span>
+                    </div>
+                    <button id="leadership-read-btn" onclick="inspectProject('events')" class="btn-cream-sticker px-4 py-1.5 rounded-full font-display font-bold text-xs text-pink-600 dark:text-pink-400 flex items-center gap-1 z-30 hover:scale-105 transition-transform">
+                        <span>Read Leadership Case Study</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-4xl text-ink dark:text-white">
+                        Student Union (UK) &amp; Rotary Youth Leadership (RYLA)
+                    </h3>
+                    <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mt-2">
+                        Directed cross-functional student teams to plan, promote, and execute cultural events (Aug–Dec 2025) and managed full club budgeting (Jan–Jun 2026), alongside serving as Rotary Exchange Advisor for 8 international exchange students.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-5 p-4 rounded-2xl bg-blush/90 dark:bg-slate-800/90 border-2 border-pink-200 dark:border-slate-700 space-y-3">
+                        <h4 class="font-display font-bold text-base text-ink dark:text-white">Key Leadership &amp; PR Impact</h4>
+                        <ul class="text-xs text-stone-700 dark:text-stone-300 space-y-2 list-disc list-inside leading-relaxed">
+                            <li><strong class="text-ink dark:text-white">CU Student Union (UK):</strong> Project Lead &amp; Treasurer—directed promotional campaigns and club budgets.</li>
+                            <li><strong class="text-ink dark:text-white">RYLA Delegate:</strong> Nominated by the executive board to facilitate cross-cultural collaboration.</li>
+                            <li><strong class="text-ink dark:text-white">Rotary Exchange Advisor:</strong> Advised President on PR strategies for 8 international exchange students.</li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs font-mono text-stone-500 uppercase font-bold">LEADERSHIP &amp; EVENT PHOTO GALLERY (CLICK TO ZOOM):</p>
+                            <span class="px-2.5 py-0.5 rounded-full bg-pink-500 text-white font-mono text-[11px] font-bold">3 Assets</span>
+                        </div>
+                        <div id="leadership-gallery-grid" class="grid grid-cols-3 gap-3">
+                            <div class="aspect-[4/5] rounded-2xl border-2 border-pink-400 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden cursor-pointer shadow-sm relative group hover:scale-[1.02] transition-transform" onclick="openLightbox('https://i.postimg.cc/yYH2RDqw/IMG-2685.jpg', 'CU Student Club — Project Lead & Treasurer')">
+                                <img src="https://i.postimg.cc/yYH2RDqw/IMG-2685.jpg" alt="CU Student Club" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            </div>
+                            <div class="aspect-[4/5] rounded-2xl border-2 border-pink-400 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden cursor-pointer shadow-sm relative group hover:scale-[1.02] transition-transform" onclick="openLightbox('https://i.postimg.cc/VL82tJQc/IMG-2697.jpg', 'RYLA Leadership — Club Representative Certificate')">
+                                <img src="https://i.postimg.cc/VL82tJQc/IMG-2697.jpg" alt="RYLA Leadership" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            </div>
+                            <div class="aspect-[4/5] rounded-2xl border-2 border-pink-400 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden cursor-pointer shadow-sm relative group hover:scale-[1.02] transition-transform" onclick="openLightbox('https://i.postimg.cc/65XFZ8Jx/IMG-2698.jpg', 'Rotary Exchange — Advisor & PR Strategy')">
+                                <img src="https://i.postimg.cc/65XFZ8Jx/IMG-2698.jpg" alt="Rotary Exchange" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="contact" class="scroll-mt-24 min-h-[75vh] flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+            <div id="contact-card-el" class="editorial-card rounded-[32px] p-8 sm:p-12 border-2 border-stone-300/90 dark:border-slate-700 relative overflow-hidden space-y-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 flex flex-col items-center sm:items-start">
+                        <div class="relative w-full max-w-md bg-pink-200/90 dark:bg-slate-800 border-2 border-ink dark:border-slate-600 rounded-3xl p-6 shadow-sticker">
+                            <div class="bg-white dark:bg-slate-900 border-2 border-ink dark:border-slate-600 rounded-2xl p-5 -mt-10 shadow-sm space-y-3 relative z-10">
+                                <div class="flex items-center justify-between text-[11px] font-mono text-stone-400 border-b border-stone-200 dark:border-slate-800 pb-2">
+                                    <span>TO: MARKETING &amp; BRAND HIRING TEAMS</span>
+                                    <span class="text-pink-500 animate-pulse">💌 READY TO CONTRIBUTE</span>
+                                </div>
+                                <p class="font-hand text-2xl text-ink dark:text-white font-bold">
+                                    "Let's craft impactful campaigns, uncover consumer insights, and drive measurable brand growth together!"
+                                </p>
+                                <div class="space-y-1 text-xs font-mono text-stone-600 dark:text-stone-300">
+                                    <p>📍 Singapore • United Kingdom • Thailand</p>
+                                    <p>📧 chatchanaphoplap@gmail.com</p>
+                                    <p>📱 +65 9241 7112</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex items-center justify-between text-xs font-mono text-pink-900 dark:text-pink-300 px-2">
+                                <span>CHATCHANA P. (NEPJUNE) // MARKETING INTERN</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-900 border border-ink dark:border-slate-600 text-ink dark:text-white font-bold">SEALED WITH ✨</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 text-center lg:text-right space-y-4">
+                        <h2 class="font-sans font-extrabold text-5xl sm:text-6xl text-ink dark:text-white tracking-tight leading-[0.95]">
+                            and <br />
+                            that's <br />
+                            <span class="text-pink-500">a wrap.</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 max-w-sm ml-auto">
+                            Available for Marketing, Brand Strategy, and Growth Internships. Click below to chat via WhatsApp, open your email draft, or connect on LinkedIn!
+                        </p>
+
+                        <div class="flex flex-wrap justify-center lg:justify-end gap-3 pt-2">
+                            <a href="https://wa.me/6592417112" target="_blank" rel="noopener noreferrer" class="btn-pink-glossy px-5 py-2.5 rounded-full text-xs font-display font-bold flex items-center gap-1.5 z-30 hover:scale-105 transition-transform">
+                                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                                <span>+65 9241 7112 (WhatsApp)</span>
+                            </a>
+                            <a href="mailto:chatchanaphoplap@gmail.com?subject=Contact%20from%20Portfolio" class="btn-cream-sticker px-5 py-2.5 rounded-full text-xs font-display font-bold flex items-center gap-1.5 z-30 hover:scale-105 transition-transform">
+                                <i data-lucide="mail" class="w-3.5 h-3.5 text-pink-500"></i>
+                                <span>Email Me</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chatchana-phoplap-902455348" target="_blank" rel="noopener noreferrer" class="btn-cream-sticker px-5 py-2.5 rounded-full text-xs font-display font-bold flex items-center gap-1.5 z-30 hover:scale-105 transition-transform">
+                                <i data-lucide="linkedin" class="w-3.5 h-3.5 text-pink-500"></i>
+                                <span>LinkedIn ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t-2 border-dashed border-pink-300 dark:border-pink-900/60 flex flex-col sm:flex-row items-center justify-center gap-8 bg-pink-50/90 dark:bg-slate-800/90 p-6 sm:p-8 rounded-3xl border-2 border-pink-200">
+                    <div class="relative kitty-animate-final flex-shrink-0">
+                        <svg width="140" height="140" viewBox="0 0 160 160" class="drop-shadow-xl overflow-visible">
+                            <circle cx="80" cy="85" r="62" fill="#fbcfe8" opacity="0.7" class="heart-pulse"/>
+                            <path d="M 40 70 Q 32 40 65 52 Q 75 46 85 48 Q 95 46 105 52 Q 138 40 130 70 Q 142 90 132 115 Q 120 140 90 145 Q 60 150 45 130 Q 30 110 40 70 Z" fill="#ffffff" stroke="#1c1917" stroke-width="4" stroke-linejoin="round"/>
+                            <g transform="translate(102, 32) rotate(18)">
+                                <ellipse cx="14" cy="0" rx="14" ry="9" fill="#f472b6" stroke="#1c1917" stroke-width="2.5"/>
+                                <ellipse cx="-14" cy="0" rx="14" ry="9" fill="#f472b6" stroke="#1c1917" stroke-width="2.5"/>
+                                <circle cx="0" cy="0" r="6" fill="#ec4899" stroke="#1c1917" stroke-width="2"/>
+                            </g>
+                            <path d="M 52 70 Q 58 64 64 72 M 52 78 Q 58 72 64 80" fill="none" stroke="#1c1917" stroke-width="3.5" stroke-linecap="round"/>
+                            <circle cx="102" cy="70" r="5" fill="#1c1917" class="kitty-wink-final"/>
+                            <line x1="36" y1="82" x2="50" y2="80" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="36" y1="92" x2="50" y2="90" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 72 82 Q 78 76 84 82 Q 78 88 84 94" fill="none" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="56" cy="88" rx="9" ry="6" fill="#fbcfe8" opacity="0.9"/>
+                            <ellipse cx="104" cy="88" rx="9" ry="6" fill="#fbcfe8" opacity="0.9"/>
+                            <path d="M 82 82 Q 88 78 92 84" fill="none" stroke="#1c1917" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Floating Sweet Kiss Heart -->
+                            <path class="kiss-heart" d="M 115 85 C 115 78, 125 74, 130 81 C 135 74, 145 78, 145 85 C 145 94, 130 102, 130 102 C 130 102, 115 94, 115 85 Z" fill="#ec4899" opacity="0"/>
+
+                            <g transform="translate(100, 102)">
+                                <path d="M 0 25 C 0 12, 7 2, 18 4 C 24 5, 26 12, 22 20 L 14 32 Z" fill="#ffffff" stroke="#1c1917" stroke-width="3.5" stroke-linejoin="round"/>
+                                <path d="M 13 4 L 7 -12 C 5 -16, 12 -18, 16 -12 L 20 -2" fill="none" stroke="#1c1917" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M 19 4 L 27 -8 C 30 -12, 36 -5, 30 -1 L 24 8" fill="none" stroke="#1c1917" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </svg>
+                        <div class="absolute -top-3 -right-2 text-pink-500 animate-ping font-bold text-lg">💋</div>
+                    </div>
+
+                    <div class="text-center sm:text-left space-y-2">
+                        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-ink dark:text-white">
+                            Thank you so much for reading until the end! 💖
+                        </h3>
+                        <p class="font-hand text-xl text-stone-600 dark:text-stone-300">
+                            Hope you enjoyed exploring Nepjune's Marketing &amp; Brand Strategy Portfolio! Have a wonderful day! ✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-stone-300/80 dark:border-slate-800 py-8 px-4 text-center text-xs font-mono text-stone-500 no-print">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 CHATCHANA PHOPLAP (NEPJUNE) • MARKETING &amp; BRAND STRATEGY PORTFOLIO 🎀</p>
+            <p class="text-pink-600 dark:text-pink-400 font-semibold">LIGHT EDITORIAL &amp; BUBBLEGUM SCRAPBOOK EDITION • 📱 +65 9241 7112</p>
+        </div>
+    </footer>
+
+    <!-- Modal Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-[2px] hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-[28px] max-w-4xl w-full p-6 sm:p-8 border-2 border-ink dark:border-slate-700 shadow-sticker relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-pink-100 dark:bg-slate-800 border border-ink dark:border-slate-600 text-ink dark:text-white hover:bg-pink-300 flex items-center justify-center">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div id="modal-content" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Guided Tour Bubble Card -->
+    <div id="tour-bubble-card" class="fixed z-[185] hidden w-[310px] sm:w-[350px] bg-white dark:bg-slate-900 rounded-2xl p-4 border-2 border-pink-500 shadow-pink-sticker transition-all duration-300">
+        <div class="flex items-center justify-between pb-2 mb-2 border-b border-stone-200 dark:border-slate-800">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-pink-600 dark:text-pink-400 font-bold" id="tour-step-badge">Guide Walkthrough</span>
+            <button onclick="closeTour()" class="w-6 h-6 rounded-full bg-stone-100 dark:bg-slate-800 text-stone-500 hover:bg-pink-200 flex items-center justify-center text-xs">✕</button>
+        </div>
+        <h4 id="tour-title" class="font-display font-bold text-sm text-ink dark:text-white mb-1">Welcome! ✨</h4>
+        <p id="tour-desc" class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-3">
+            Let's take a quick guided walkthrough on how to click and explore this portfolio!
+        </p>
+
+        <div id="tour-demo-container" class="hidden mb-3 p-3 rounded-xl bg-stone-900 text-white border border-pink-500 text-center shadow-md">
+            <div id="tour-demo-content" class="text-xs font-mono text-pink-300 font-bold">🌙 Dark Mode Preview Active...</div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button id="tour-prev-btn" onclick="prevTourStep()" class="px-3 py-1.5 rounded-full text-[11px] font-mono border border-stone-300 dark:border-slate-700 hidden">Back</button>
+            <div class="ml-auto flex gap-2">
+                <button id="tour-skip-btn" onclick="closeTour()" class="px-3 py-1.5 rounded-full text-[11px] font-mono text-stone-500 hover:bg-stone-100">Skip</button>
+                <button id="tour-next-btn" onclick="nextTourStep()" class="btn-pink-glossy px-4 py-1.5 rounded-full font-display font-bold text-xs shadow-md pulse-tour">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-backdrop" class="fixed inset-0 z-[190] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 text-white hover:bg-white/40 flex items-center justify-center border border-white/40 shadow-lg transition-transform hover:scale-105 z-10">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Zoomed Preview" class="max-w-full max-h-[82vh] object-contain rounded-2xl border-2 border-white/20 shadow-2xl bg-white" />
+            <p id="lightbox-caption" class="mt-3 font-mono text-xs sm:text-sm text-white/90 bg-black/60 px-4 py-2 rounded-full border border-white/20"></p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-white dark:bg-slate-900 px-5 py-3 rounded-full border-2 border-ink dark:border-slate-700 text-xs font-mono font-bold text-ink dark:text-white shadow-pink-sticker translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-2 pointer-events-none">
+        <span class="text-base">💖</span>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+        });
+
+        lucide.createIcons();
+
+        function updateActiveNavOnScroll() {
+            const sectionIds = ['hero', 'skills', 'projects', 'leadership-section', 'contact'];
+            const navLinks = document.querySelectorAll('.nav-spy-link');
+            let currentSection = 'hero';
+
+            const triggerPoint = window.innerHeight * 0.38;
+
+            sectionIds.forEach(id => {
+                const sectionEl = document.getElementById(id);
+                if (sectionEl) {
+                    const rect = sectionEl.getBoundingClientRect();
+                    if (rect.top <= triggerPoint && rect.bottom >= triggerPoint / 2) {
+                        currentSection = id;
+                    }
+                }
+            });
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-section') === currentSection) {
+                    link.classList.add('nav-link-active');
+                } else {
+                    link.classList.remove('nav-link-active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavOnScroll, { passive: true });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateActiveNavOnScroll();
+            if (!localStorage.getItem('portfolio_tour_shown')) {
+                setTimeout(() => {
+                    startPortfolioTour();
+                    localStorage.setItem('portfolio_tour_shown', 'true');
+                }, 900);
+            }
+        });
+
+        function toggleDarkMode() {
+            const htmlEl = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                themeIcon.textContent = '🌙';
+                showToast('Switched to Light Editorial Zine Mode ☀️');
+            } else {
+                htmlEl.classList.add('dark');
+                themeIcon.textContent = '☀️';
+                showToast('Switched to Chic Dark Mode 🌙');
+            }
+        }
+
+        let currentTourStep = 1;
+        const tourSteps = [
+            {
+                title: "Welcome to Nepjune's Portfolio! ✨",
+                desc: "This quick walkthrough will show you how to navigate sections, switch themes, inspect Marketing Pillars, zoom into graphics, and view case studies.",
+                target: null,
+                position: "center",
+                demo: null,
+                blurType: "full"
+            },
+            {
+                title: "1. Top Navigation Menu 🧭",
+                desc: "Click any pill button here to jump instantly to that section.",
+                target: "nav-menu-links",
+                position: "below",
+                demo: null,
+                blurType: "full"
+            },
+            {
+                title: "2. Dark / Light Mode Toggle 🌙☀️",
+                desc: "Click this moon/sun button anytime to switch between crisp light zine mode and chic dark mode.",
+                target: "theme-toggle-btn",
+                position: "below",
+                demo: "darklight-preview",
+                blurType: "full"
+            },
+            {
+                title: "3. Core Marketing Pillars 📊",
+                desc: "Click these interactive pillar buttons to inspect specific verified metrics and strategies like Promotional Campaigns and Market Research R&D!",
+                target: "marketing-pillars-container",
+                position: "above",
+                demo: null,
+                blurType: "none"
+            },
+            {
+                title: "4. Click Graphics & Photos to Zoom 📸",
+                desc: "Click directly on any photo in the project galleries to view them full-screen!",
+                target: "cafe-gallery-grid-main",
+                position: "above",
+                demo: null,
+                blurType: "none"
+            },
+            {
+                title: "5. Read Full Case Study Button 📋",
+                desc: "Click this exact 'Read Full Case Study' button to inspect detailed commercial breakdown reports and metrics.",
+                target: "cafe-read-btn",
+                position: "above",
+                demo: null,
+                blurType: "none"
+            },
+            {
+                title: "6. View Complete CV 📄",
+                desc: "Click the 'Full CV' button anytime in the top-right corner to examine the complete academic and professional history popup!",
+                target: "full-cv-btn-el",
+                position: "below",
+                demo: true,
+                blurType: "nav-only"
+            }
+        ];
+
+        function startPortfolioTour() {
+            currentTourStep = 1;
+            document.body.classList.add('tour-active');
+            updateTourBubble();
+        }
+
+        function nextTourStep() {
+            clearSpotlight();
+            currentTourStep++;
+            if (currentTourStep > tourSteps.length) {
+                closeTour();
+            } else {
+                updateTourBubble();
+            }
+        }
+
+        function prevTourStep() {
+            if (currentTourStep > 1) {
+                clearSpotlight();
+                currentTourStep--;
+                updateTourBubble();
+            }
+        }
+
+        function updateTourBubble() {
+            const step = tourSteps[currentTourStep - 1];
+            document.getElementById('tour-title').textContent = step.title;
+            document.getElementById('tour-desc').textContent = step.desc;
+
+            const backdropEl = document.getElementById('tour-spotlight-backdrop');
+            if (step.blurType === "full" || step.blurType === "nav-only") {
+                backdropEl.style.display = 'block';
+            } else {
+                backdropEl.style.display = 'none';
+            }
+
+            const headerEl = document.getElementById('main-site-header');
+            if (step.blurType === "nav-only") {
+                headerEl.style.zIndex = '195';
+                headerEl.style.position = 'fixed';
+            } else {
+                headerEl.style.zIndex = '170';
+            }
+
+            const demoContainer = document.getElementById('tour-demo-container');
+            const demoContent = document.getElementById('tour-demo-content');
+            if (step.demo === "darklight-preview") {
+                demoContainer.classList.remove('hidden');
+                demoContent.innerHTML = "🌙 Preview: Dark Mode Active...<br><span class='text-[10px] text-pink-300 font-normal'>Switching back to Light Mode ☀️</span>";
+                document.documentElement.classList.add('dark');
+                setTimeout(() => {
+                    document.documentElement.classList.remove('dark');
+                }, 1400);
+            } else {
+                demoContainer.classList.add('hidden');
+            }
+
+            const prevBtn = document.getElementById('tour-prev-btn');
+            if (currentTourStep > 1) {
+                prevBtn.classList.remove('hidden');
+            } else {
+                prevBtn.classList.add('hidden');
+            }
+
+            const nextBtn = document.getElementById('tour-next-btn');
+            if (currentTourStep === tourSteps.length) {
+                nextBtn.textContent = 'Finish 🎉';
+            } else {
+                nextBtn.textContent = 'Next →';
+            }
+
+            const bubble = document.getElementById('tour-bubble-card');
+            bubble.classList.remove('hidden');
+
+            if (!step.target || step.position === 'center') {
+                const heroEl = document.getElementById('hero');
+                if (heroEl) heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                bubble.style.position = 'fixed';
+                bubble.style.top = '50%';
+                bubble.style.left = '50%';
+                bubble.style.transform = 'translate(-50%, -50%)';
+                bubble.style.width = '350px';
+            } else {
+                bubble.style.transform = 'none';
+                const targetEl = document.getElementById(step.target) || document.querySelector('#' + step.target);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setTimeout(() => {
+                        targetEl.classList.add('tour-spotlight-highlight');
+                        const rect = targetEl.getBoundingClientRect();
+                        const bubbleRect = bubble.getBoundingClientRect();
+                        
+                        let topPos;
+                        let leftPos = rect.left + (rect.width / 2) - (bubbleRect.width / 2);
+
+                        if (step.position === 'above') {
+                            topPos = rect.top - bubbleRect.height - 18;
+                        } else {
+                            topPos = rect.bottom + 18;
+                        }
+
+                        if (topPos < 16) topPos = rect.bottom + 18;
+                        if (topPos + bubbleRect.height > window.innerHeight - 16) {
+                            topPos = rect.top - bubbleRect.height - 18;
+                        }
+                        if (leftPos < 16) leftPos = 16;
+                        if (leftPos + bubbleRect.width > window.innerWidth - 16) {
+                            leftPos = window.innerWidth - bubbleRect.width - 16;
+                        }
+
+                        bubble.style.position = 'fixed';
+                        bubble.style.top = `${Math.max(16, topPos)}px`;
+                        bubble.style.left = `${Math.max(16, leftPos)}px`;
+                    }, 400);
+                }
+            }
+        }
+
+        function clearSpotlight() {
+            tourSteps.forEach(s => {
+                if (s.target) {
+                    const el = document.getElementById(s.target) || document.querySelector('#' + s.target);
+                    if (el) el.classList.remove('tour-spotlight-highlight');
+                }
+            });
+            const headerEl = document.getElementById('main-site-header');
+            headerEl.style.zIndex = '170';
+        }
+
+        function closeTour() {
+            clearSpotlight();
+            document.body.classList.remove('tour-active');
+            document.body.classList.add('tour-completed');
+            document.getElementById('tour-spotlight-backdrop').style.display = 'none';
+            document.getElementById('tour-bubble-card').classList.add('hidden');
+            const heroEl = document.getElementById('hero');
+            if (heroEl) {
+                heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            showToast('Enjoy exploring the portfolio! 💖');
+        }
+
+        function openLightbox(url, caption) {
+            const lightbox = document.getElementById('lightbox-backdrop');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            img.src = url;
+            cap.textContent = caption || 'Full-Size Portfolio Asset';
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-backdrop');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        const skillData = {
+            campaign: {
+                title: "Multi-Property Promotional Campaigns & Tenant Retention",
+                level: "REAL ESTATE BY PP GROUP",
+                width: "96%",
+                desc: "Directed targeted promotional campaigns and tenant engagement initiatives across a 10-property real estate portfolio, accelerating occupancy rates and maximizing monthly ROI."
+            },
+            research: {
+                title: "Consumer Market Research & Product R&D",
+                level: "PHUSIT NUNGCHILL CAFE",
+                width: "95%",
+                desc: "Spearheaded continuous market research (R&D) to launch new beverage and dessert offerings, directly contributing to an +8.4% increase in order volume (155 transactions)."
+            },
+            pricing: {
+                title: "Data-Driven Pricing Strategy & Sales Trend Analytics",
+                level: "+28.6% NET SALES SURGE",
+                width: "98%",
+                desc: "Analyzed monthly sales trends and unit economics to formulate strategic menu pricing—boosting weekly net sales by +28.6% and average ticket size by +18.7% (THB 88.81)."
+            },
+            outreach: {
+                title: "Public Engagement, Event Marketing & Cross-Cultural PR",
+                level: "SINGAPORE • UK • THAILAND",
+                width: "94%",
+                desc: "Led student event planning & budgeting at the UK Student Union, represented Friends of Autism (Singapore), and advised Rotary International on cross-cultural PR for 8 exchange students."
+            },
+            tools: {
+                title: "Marketing & Commercial Toolkit: Excel, PowerPoint, Word & Bilingual PR",
+                level: "1ST CLASS HONOURS (UK)",
+                width: "96%",
+                desc: "Proficient in Microsoft Excel for campaign ROI tracking and sales forecasting, PowerPoint for pitch decks, and fluent bilingual communication in English and Thai."
+            }
+        };
+
+        function selectSkill(key) {
+            const item = skillData[key];
+            if (!item) return;
+
+            document.getElementById('skill-title').textContent = item.title;
+            document.getElementById('skill-level').textContent = item.level;
+            document.getElementById('skill-desc').textContent = item.desc;
+            document.getElementById('skill-bar').style.width = item.width;
+
+            document.querySelectorAll('.skill-pill').forEach(btn => {
+                btn.className = "skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-white dark:bg-slate-800 text-ink dark:text-white border-2 border-ink dark:border-slate-600 hover:bg-pink-100 transition-all hover:scale-105";
+            });
+            const activeBtn = document.getElementById('pill-' + key);
+            if (activeBtn) {
+                activeBtn.className = "skill-pill px-4 py-2.5 rounded-full font-display font-bold text-xs sm:text-sm flex items-center gap-2 bg-pink-500 text-white border-2 border-ink dark:border-pink-400 shadow-sticker transition-all hover:scale-105";
+            }
+        }
+
+        const projectDetails = {
+            cafe: {
+                badge: "Phusit Nungchill Cafe • Aug 2024 – Dec 2024",
+                title: "Menu R&D, Consumer Insights & Revenue Optimization",
+                summary: "Led commercial marketing, product R&D, and pricing strategy for a bustling cafe concept, translating daily sales data and customer feedback into measurable top-line growth.",
+                bullets: [
+                    "Market Research & Product R&D: Conducted continuous consumer taste testing and competitor analysis to develop new beverage and dessert items and refresh menu positioning.",
+                    "Strategic Pricing & Promotions: Analyzed monthly sales trends and financial metrics to re-engineer menu pricing, driving a +28.6% increase in weekly net sales in August 2024.",
+                    "Basket Size & Conversion Growth: Elevated average customer ticket size to THB 88.81 (+18.7%) while scaling order volume to 155 transactions (+8.4%)."
+                ]
+            },
+            realestate: {
+                badge: "Real Estate by PP Group • Dec 2024 – Apr 2025",
+                title: "Real Estate by PP Group — Promotional & ROI Strategy",
+                summary: "Managed end-to-end promotional marketing, tenant communications, and commercial pricing across a 10-property residential and commercial real estate portfolio.",
+                bullets: [
+                    "My Direct Role: Solely designed and executed the multi-property promotional calendar, optimizing tenant CRM strategies and managing pricing models across all 10 residential and commercial properties.",
+                    "Pricing & ROI Optimization: Partnered with property managers to analyze local market benchmarks, translating cost evaluations into competitive rental pricing strategies that maximized monthly occupancy and cash-flow ROI."
+                ]
+            },
+            events: {
+                badge: "UK Student Union & Rotary International • 2017 – 2026",
+                title: "Student Union (UK) & Rotary Youth Leadership (RYLA)",
+                summary: "A multi-year track record of leading international student events in the United Kingdom and advising on cross-cultural communication strategies in Thailand.",
+                bullets: [
+                    "My Direct Role (CU Student Union - Project Lead & Treasurer): Led the planning, promotion, and end-to-end budgeting for cultural and social events under strict deadlines, coordinating cross-functional student teams.",
+                    "Stakeholder PR & Communications (Rotary International): Acted as the primary strategy advisor for cross-cultural PR and stakeholder communications, streamlining international student onboarding with 100% translation accuracy."
+                ]
+            }
+        };
+
+        function inspectProject(key) {
+            const p = projectDetails[key];
+            if (!p) return;
+            const modal = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 border border-pink-300 dark:border-pink-800">${p.badge}</span>
+                <h3 class="font-display font-extrabold text-2xl text-ink dark:text-white mt-2">${p.title}</h3>
+                <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed">${p.summary}</p>
+                <div class="p-4 rounded-2xl bg-blush dark:bg-slate-800 border-2 border-pink-200 dark:border-slate-700 space-y-2">
+                    <p class="text-xs font-mono font-bold text-pink-600 dark:text-pink-400 uppercase">Key Marketing &amp; Commercial Impact:</p>
+                    <ul class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-2 list-disc list-inside leading-relaxed">
+                        ${p.bullets.map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="flex justify-end pt-2">
+                    <button onclick="closeModal()" class="btn-cream-sticker px-5 py-2 rounded-full text-xs font-display font-bold">
+                        Close
+                    </button>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openCVModal() {
+            const modal = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div class="border-b border-stone-200 dark:border-slate-700 pb-4 flex flex-wrap items-center justify-between gap-2 pr-10">
+                        <div>
+                            <span class="text-xs font-mono font-bold text-pink-600 dark:text-pink-400 uppercase">FULL CURRICULUM VITAE // MARKETING, BRAND STRATEGY &amp; COMMERCIAL ANALYTICS</span>
+                            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-ink dark:text-white">CHATCHANA PHOPLAP (NEPJUNE)</h3>
+                            <p class="text-xs text-stone-500 font-mono mt-1">📱 +65 9241 7112 • 📧 chatchanaphoplap@gmail.com • 🌐 English (Fluent) / Thai (Native)</p>
+                        </div>
+                        <button onclick="window.print()" class="btn-pink-glossy px-4 py-2 rounded-full text-xs font-display font-bold flex items-center gap-1.5">
+                            <span>🖨️ Print / Save PDF</span>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 text-xs">
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="p-4 rounded-2xl bg-blush/70 dark:bg-slate-800 border border-pink-200 dark:border-slate-700 space-y-3">
+                                <h4 class="font-display font-extrabold text-base text-ink dark:text-white border-b border-pink-200 dark:border-slate-700 pb-2">🎓 Academic Background (SG &amp; UK)</h4>
+                                <div class="space-y-1">
+                                    <span class="font-mono text-[10px] font-bold text-pink-600 dark:text-pink-400">Aug 2027 – Nov 2028</span>
+                                    <p class="font-display font-bold text-sm text-ink dark:text-white">SINGAPORE MANAGEMENT UNIVERSITY</p>
+                                    <p class="font-semibold text-stone-700 dark:text-stone-300">Master of Professional Accounting (MPA)</p>
+                                    <p class="text-stone-500">Admitted; Commencing August 2027 • Singapore</p>
+                                </div>
+                                <div class="pt-2 border-t border-pink-200/60 dark:border-slate-700 space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-mono text-[10px] font-bold text-stone-500">Dec 2024 – Jul 2026</span>
+                                        <span class="px-2 py-0.5 rounded-full bg-pink-500 text-white font-mono text-[9px] font-bold">First-Class Honours ★</span>
+                                    </div>
+                                    <p class="font-display font-bold text-sm text-ink dark:text-white">COVENTRY UNIVERSITY – United Kingdom</p>
+                                    <p class="font-semibold text-stone-700 dark:text-stone-300">Bachelor of Science with Honours in Accounting and Finance</p>
+                                    <p class="text-stone-500">Strong foundation in commercial analytics, pricing strategy, consumer markets, and corporate performance evaluation.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-slate-800 border border-stone-200 dark:border-slate-700 space-y-3">
+                                <h4 class="font-display font-extrabold text-base text-ink dark:text-white border-b border-stone-200 dark:border-slate-700 pb-2">🌍 Public Outreach, Events &amp; Leadership</h4>
+                                <div class="space-y-2.5">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <p class="font-bold text-ink dark:text-white">Friends of Autism Charitable Trust – SG</p>
+                                            <span class="font-mono text-[10px] font-bold text-pink-600 dark:text-pink-400">Jul – Aug 2026</span>
+                                        </div>
+                                        <p class="text-stone-700 dark:text-stone-300 font-medium">Community Outreach &amp; Advocacy Project Volunteer</p>
+                                        <p class="text-stone-500 leading-relaxed">Represented the foundation in public engagement campaigns to drive community awareness for Autism Spectrum Disorder (ASD), strengthening cross-cultural public communication.</p>
+                                    </div>
+                                    <div class="pt-2 border-t border-stone-200 dark:border-slate-700">
+                                        <div class="flex items-center justify-between">
+                                            <p class="font-bold text-ink dark:text-white">Student Union – UK (Thai Student)</p>
+                                            <span class="font-mono text-[10px] font-bold text-pink-600 dark:text-pink-400">Aug 2025 – Jun 2026</span>
+                                        </div>
+                                        <p class="text-stone-700 dark:text-stone-300 font-medium">Project Lead (Aug–Dec 2025) &amp; Treasurer (Jan–Jun 2026)</p>
+                                        <p class="text-stone-500 leading-relaxed">Partnered with cross-functional teams to plan, promote, and execute student events, managing team communication, event funding allocation, and strict operational deadlines.</p>
+                                    </div>
+                                    <div class="pt-2 border-t border-stone-200 dark:border-slate-700">
+                                        <div class="flex items-center justify-between">
+                                            <p class="font-bold text-ink dark:text-white">Rotary International (Kantharalak Chapter)</p>
+                                            <span class="font-mono text-[10px] font-bold text-pink-600 dark:text-pink-400">Aug 2018 – Aug 2019</span>
+                                        </div>
+                                        <p class="text-stone-700 dark:text-stone-300 font-medium">Rotary Youth Exchange Advisor &amp; Assistant</p>
+                                        <p class="text-stone-500 leading-relaxed">Advised the Club President on communication strategies to streamline international student onboarding and managed stakeholder relationships across diverse cultural backgrounds for 8 international placements.</p>
+                                    </div>
+                                    <div class="pt-2 border-t border-stone-200 dark:border-slate-700">
+                                        <div class="flex items-center justify-between">
+                                            <p class="font-bold text-ink dark:text-white">Rotary Youth Leadership Awards (RYLA)</p>
+                                            <span class="font-mono text-[10px] font-bold text-pink-600 dark:text-pink-400">Oct 2017</span>
+                                        </div>
+                                        <p class="text-stone-700 dark:text-stone-300 font-medium">RYLA Delegate (Club Representative)</p>
+                                        <p class="text-stone-500 leading-relaxed">Selected by the executive board to facilitate cross-cultural collaboration among Thai and international workshop participants under tight project deadlines.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7 space-y-4">
+                            <div class="p-4 rounded-2xl bg-stone-50 dark:bg-slate-800 border border-stone-200 dark:border-slate-700 space-y-3">
+                                <div class="flex items-center justify-between border-b border-stone-200 dark:border-slate-700 pb-2">
+                                    <h4 class="font-display font-extrabold text-base text-ink dark:text-white">💼 Professional Experience</h4>
+                                    <span class="font-mono text-[10px] text-stone-400">2021 – 2025</span>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-stone-200 dark:border-slate-700 space-y-1.5">
+                                    <div class="flex flex-wrap items-center justify-between gap-1">
+                                        <p class="font-display font-bold text-sm text-ink dark:text-white">REAL ESTATE BY PP GROUP – Thailand</p>
+                                        <span class="px-2 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 font-mono text-[10px] font-semibold">Dec 2024 – Apr 2025</span>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-pink-600 dark:text-pink-400 uppercase">Real Estate Portfolio Administrator (Promotions &amp; Commercial Strategy)</p>
+                                    <ul class="text-stone-600 dark:text-stone-300 space-y-1 list-disc list-inside leading-relaxed">
+                                        <li>Managed a <strong>10-property real estate portfolio</strong>, directing <strong>promotional campaigns</strong>, tenant relations, and property positioning to drive occupancy and retention.</li>
+                                        <li>Conducted market and operational cost analysis to formulate competitive <strong>pricing strategies</strong>, optimizing promotional budgets and reconciling monthly cash flows to maximize ROI.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-stone-200 dark:border-slate-700 space-y-1.5">
+                                    <div class="flex flex-wrap items-center justify-between gap-1">
+                                        <p class="font-display font-bold text-sm text-ink dark:text-white">PHUSIT NUNGCHILL CAFE – Thailand</p>
+                                        <span class="px-2 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 font-mono text-[10px] font-semibold">Aug 2024 – Dec 2024</span>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-pink-600 dark:text-pink-400 uppercase">Operations Manager (Product R&amp;D, Menu Marketing &amp; Sales Growth)</p>
+                                    <ul class="text-stone-600 dark:text-stone-300 space-y-1 list-disc list-inside leading-relaxed">
+                                        <li>Analyzed monthly sales trends and consumer purchasing behavior to formulate targeted <strong>pricing and promotional strategies</strong>, <strong class="text-pink-600 dark:text-pink-400">increasing weekly net sales by 28.6%</strong> in August 2024.</li>
+                                        <li>Spearheaded new beverage and dessert product development and updated menu offerings through <strong>continuous market research (R&amp;D)</strong> to capture evolving customer tastes.</li>
+                                        <li>Improved <strong>average ticket size to THB 88.81 (+18.7%)</strong> through strategic menu upselling while processing <strong>155 transactions (+8.4%)</strong> and directing front-of-house customer experience.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-stone-200 dark:border-slate-700 space-y-1.5">
+                                    <div class="flex flex-wrap items-center justify-between gap-1">
+                                        <p class="font-display font-bold text-sm text-ink dark:text-white">PHUSIT INSURANCE BROKER CO., LTD – Thailand</p>
+                                        <span class="px-2 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 font-mono text-[10px] font-semibold">Aug 2021 – Aug 2024</span>
+                                    </div>
+                                    <p class="text-[11px] font-bold text-stone-500 uppercase">Account Assistant &amp; Corporate Representative</p>
+                                    <ul class="text-stone-600 dark:text-stone-300 space-y-1 list-disc list-inside leading-relaxed">
+                                        <li>Selected as the <strong>Corporate Delegate for two consecutive years (2023–2024)</strong> at national statutory workshops, demonstrating strong professional representation and client-facing reliability.</li>
+                                        <li>Prepared and reviewed <strong>50+ corporate accounts and compliance filings</strong> with 100% accuracy, managing client registration services and end-to-end documentation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-blush dark:bg-slate-800 border border-pink-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
+                                <div>
+                                    <span class="font-mono font-bold text-pink-600 dark:text-pink-400 uppercase block">Software, Certifications &amp; Languages</span>
+                                    <span class="text-stone-700 dark:text-stone-300">Microsoft Office Suite (Proficient in Excel, Word, PowerPoint) • Sage 50 • Financial Accounting Foundations (LinkedIn Learning, Aug 2026)</span>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white dark:bg-slate-900 border border-ink dark:border-slate-600 font-mono font-bold text-ink dark:text-white">
+                                    English (Fluent) • Thai (Native)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-end gap-3 pt-2 border-t border-stone-200 dark:border-slate-700">
+                        <button onclick="window.print()" class="btn-pink-glossy px-5 py-2 rounded-full text-xs font-display font-bold">
+                            Print / Save as PDF
+                        </button>
+                        <button onclick="closeModal()" class="btn-cream-sticker px-5 py-2 rounded-full text-xs font-display font-bold">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal-backdrop');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 2800);
+        }
+
+        document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+            if (e.target.id === 'modal-backdrop') closeModal();
+        });
+        document.getElementById('lightbox-backdrop').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox-backdrop') closeLightbox();
+        });
+    </script>
+</body>
+</html>
